@@ -3,7 +3,7 @@ name: build and push backend image to ACR
 on: workflow_dispatch
 permissions:
   id-token: write
-  contents: Read
+  contents: read
 jobs:
   Build-push-to-acr:
     runs-on: ubuntu-latest
