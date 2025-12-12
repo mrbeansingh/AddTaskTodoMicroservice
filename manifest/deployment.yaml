@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-add-app-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      type: add-pod
+  template:
+    metadata:
+      labels: 
+        type: add-pod
+    spec:
+       containers:
+        - name: add-con
+          image: aksacr.azurecr.io/add-task-todo:v1
+          ports:
+           - containerPort: 8000
+          env:
+           - name: CONNECTION_STRING
+             value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:dql-sever.database.windows.net,1433;Database=sql-dev-db;Authentication=ActiveDirectoryMsi;Encrypt=yes;TrustServerCertificate=no;"
+              
+
+
+
+
+          
+
+
