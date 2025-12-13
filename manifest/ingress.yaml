@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: add-ingress-rule
 spec:
-  ingressClassName: nginx
+  ingressClassName: azure-application-gateway              # nginx
   rules:
    - host: todo-add.abhaysingh.shop
      http:
